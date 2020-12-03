@@ -7,8 +7,10 @@
 }
 
 .nav-item {
+  font-weight: bold;
   margin: auto;
   font-size: 18px;
+  margin-left: 30%;
 }
 
 .nav-link {

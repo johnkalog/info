@@ -1,28 +1,30 @@
 <!-- https://bootsnipp.com/snippets/dldxB -->
 
-<div class="wrapper fadeInDown">
-  <div id="formContent">
-    <!-- Tabs Titles -->
+<form [formGroup]="myFormGroup">
+  <div class="wrapper">
+    <div id="formContent">
+      <!-- Tabs Titles -->
 
-    <!-- Icon -->
-    <div class="fadeIn first start">
-      <a>Login</a>
-    </div>
+      <!-- Icon -->
+      <div class="fadeIn first start">
+        <a>Login</a>
+      </div>
 
-    <!-- Login Form -->
-    <form>
+      <!-- Login Form -->
       <input
         type="text"
         id="login"
+        formControlName="login"
         class="fadeIn second"
-        name="login"
+        (blur)="checkCredentials()"
         placeholder="login"
       />
       <input
         type="text"
         id="password"
+        formControlName="password"
         class="fadeIn third"
-        name="login"
+        (blur)="checkCredentials()"
         placeholder="password"
       />
       <button
@@ -32,14 +34,14 @@
       >
         Log In
       </button>
-    </form>
 
-    <!-- Remind Passowrd -->
-    <div id="formFooter">
-      <a class="underlineHover" (click)="showTheHint()" href="#">{{
-        showOrHide
-      }}</a>
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" (click)="showTheHint()" href="#">{{
+          showOrHide
+        }}</a>
+      </div>
+      <h1 *ngIf="show">admin</h1>
     </div>
-    <h1 *ngIf="show">admin</h1>
   </div>
-</div>
+</form>

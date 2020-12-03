@@ -7,20 +7,37 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
   styleUrls: ["./login.component.css"],
 })
 export class LoginComponent implements OnInit {
-  private formGroup: FormGroup;
+  private myFormGroup: FormGroup;
   private show = false;
+
+  private notInitializedYet = true;
+
+  readonly fixedUser = "admin";
 
   constructor() {}
 
   ngOnInit() {
-    this.formGroup = new FormGroup({
+    this.myFormGroup = new FormGroup({
       login: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required),
     });
+
+    this.notInitializedYet = false;
   }
 
   public get btnDisabled(): boolean {
-    return this.formGroup.invalid;
+    if (this.notInitializedYet) return true;
+    return this.myFormGroup.invalid;
+  }
+
+  public checkCredentials(): void {
+    if (this.btnDisabled) return;
+
+    const { login, password } = this.myFormGroup.controls;
+
+    if (login.value === this.fixedUser && password.value === this.fixedUser) {
+      alert("342");
+    }
   }
 
   public onBtnClick(): void {
