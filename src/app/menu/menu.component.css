@@ -1,0 +1,16 @@
+.navbar-custom {
+  background-color: #eeeeee;
+}
+
+.navbar-nav {
+  min-height: 76px;
+}
+
+.nav-item {
+  margin: auto;
+  font-size: 18px;
+}
+
+.nav-link {
+  color: #29a8ab;
+}

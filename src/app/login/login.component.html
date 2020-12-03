@@ -25,12 +25,21 @@
         name="login"
         placeholder="password"
       />
-      <input type="submit" class="fadeIn fourth" value="Log In" />
+      <button
+        class="blueButton"
+        (click)="onBtnClick()"
+        [disabled]="btnDisabled"
+      >
+        Log In
+      </button>
     </form>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="#">Show hint</a>
+      <a class="underlineHover" (click)="showTheHint()" href="#">{{
+        showOrHide
+      }}</a>
     </div>
+    <h1 *ngIf="show">admin</h1>
   </div>
 </div>

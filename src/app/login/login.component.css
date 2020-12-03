@@ -1,7 +1,9 @@
 /* BASIC */
 
 html {
-  background-color: #56baed;
+  background-color: #56baed !important;
+  /* background-image: url("../../assets/img/y-so-serious-white.png");
+  background-repeat: repeat-y; */
 }
 
 body {
@@ -14,6 +16,15 @@ a {
   display: inline-block;
   text-decoration: none;
   font-weight: 400;
+}
+
+h1 {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  display: inline-block;
+  margin: 6px;
+  color: #af2f2f;
 }
 
 h2 {
@@ -46,7 +57,7 @@ h2 {
   justify-content: center;
   width: 100%;
   min-height: 100%;
-  padding: 20px;
+  padding: 5%;
 }
 
 #formContent {
@@ -85,9 +96,9 @@ h2.active {
 
 /* FORM TYPOGRAPHY*/
 
-input[type="button"],
 input[type="submit"],
-input[type="reset"] {
+input[type="reset"],
+.blueButton {
   background-color: #56baed;
   border: none;
   color: white;
@@ -109,13 +120,13 @@ input[type="reset"] {
   transition: all 0.3s ease-in-out;
 }
 
-input[type="button"]:hover,
+.blueButton:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover {
   background-color: #39ace7;
 }
 
-input[type="button"]:active,
+.blueButton:active,
 input[type="submit"]:active,
 input[type="reset"]:active {
   -moz-transform: scale(0.95);
@@ -155,26 +166,6 @@ input[type="text"]:placeholder {
   color: #cccccc;
 }
 
-/* Simple CSS3 Fade-in Animation */
-.underlineHover:after {
-  display: block;
-  left: 0;
-  bottom: -10px;
-  width: 0;
-  height: 2px;
-  background-color: #56baed;
-  content: "";
-  transition: width 0.2s;
-}
-
-.underlineHover:hover {
-  color: #0d0d0d;
-}
-
-.underlineHover:hover:after {
-  width: 100%;
-}
-
 /* OTHERS */
 
 *:focus {
@@ -183,4 +174,9 @@ input[type="text"]:placeholder {
 
 #icon {
   width: 60%;
+}
+
+.blueButton:disabled,
+.blueButton[disabled] {
+  background-color: #a6c0db;
 }
