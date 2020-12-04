@@ -10,6 +10,8 @@ import { ContactComponent } from "./contact/contact.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ListItemsComponent } from './list-items/list-items.component';
+import { ListUsersComponent } from './list-users/list-users.component';
+import { ModalQuestionComponent } from './modal-question/modal-question.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { ListItemsComponent } from './list-items/list-items.component';
     ContactComponent,
     PageNotFoundComponent,
     ListItemsComponent,
+    ListUsersComponent,
+    ModalQuestionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
   providers: [],

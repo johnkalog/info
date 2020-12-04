@@ -8,7 +8,7 @@ import { MenuActionService } from "../menu-action.service";
   styleUrls: ["./menu.component.css"],
 })
 export class MenuComponent implements OnInit {
-  action = true;
+  action: boolean;
   constructor(private menuAction: MenuActionService, private router: Router) {}
 
   ngOnInit() {

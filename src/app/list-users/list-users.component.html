@@ -1,0 +1,54 @@
+<!-- Editable table -->
+<div class="card">
+  <h3 class="card-header text-center font-weight-bold text-uppercase py-4">
+    Users
+  </h3>
+  <div class="card-body">
+    <div id="table" class="table-editable">
+      <span class="table-add float-right mb-3 mr-2"
+        ><a href="#!" class="text-success"
+          ><i class="fas fa-plus fa-2x" aria-hidden="true"></i></a
+      ></span>
+      <table
+        class="table table-bordered table-responsive-md table-striped text-center"
+      >
+        <thead>
+          <tr>
+            <th class="text-center">Name</th>
+            <th class="text-center">UserName</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Address</th>
+            <th class="text-center">Website</th>
+            <th class="text-center">Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; let i = index" [attr.data-index]="i">
+            <td class="pt-3-half" contenteditable="true">{{ user.name }}</td>
+            <td class="pt-3-half" contenteditable="true">
+              {{ user.username }}
+            </td>
+            <td class="pt-3-half" contenteditable="true">{{ user.email }}</td>
+            <td class="pt-3-half" contenteditable="true">
+              {{ user.city }}
+            </td>
+            <td class="pt-3-half" contenteditable="true">{{ user.website }}</td>
+
+            <td>
+              <span class="table-remove"
+                ><button
+                  type="button"
+                  class="btn btn-danger btn-rounded btn-sm my-0"
+                  (click)="onRemoveClick(i)"
+                >
+                  Remove
+                </button></span
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- Editable table -->
