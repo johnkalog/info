@@ -5,12 +5,23 @@
         <a class="nav-link" routerLink="/" routerLinkActive="active">Login </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/home" routerLinkActive="active"
+        <a
+          class="nav-link"
+          [class.noUser]="!action"
+          [class.user]="action"
+          routerLink="/home"
+          routerLinkActive="active"
           >Home
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/contact" routerLinkActive="active">
+        <a
+          class="nav-link"
+          [class.noUser]="!action"
+          [class.user]="action"
+          routerLink="/contact"
+          routerLinkActive="active"
+        >
           Contact</a
         >
       </li>

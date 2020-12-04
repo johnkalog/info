@@ -15,4 +15,15 @@
 
 .nav-link {
   color: #29a8ab;
+  cursor: pointer;
+}
+
+.noUser {
+  color: #90acac;
+  pointer-events: none;
+}
+
+.user {
+  color: #29a8ab;
+  pointer-events: auto;
 }

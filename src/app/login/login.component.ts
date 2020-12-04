@@ -1,5 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { MenuActionService } from "../menu-action.service";
 
 @Component({
   selector: "app-login",
@@ -7,14 +9,16 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
   styleUrls: ["./login.component.css"],
 })
 export class LoginComponent implements OnInit {
+  @Output() changeMenu: EventEmitter<boolean> = new EventEmitter();
   private myFormGroup: FormGroup;
   private show = false;
 
   private notInitializedYet = true;
+  private validUser = false;
 
   readonly fixedUser = "admin";
 
-  constructor() {}
+  constructor(private menuAction: MenuActionService, private router: Router) {}
 
   ngOnInit() {
     this.myFormGroup = new FormGroup({
@@ -35,13 +39,12 @@ export class LoginComponent implements OnInit {
 
     const { login, password } = this.myFormGroup.controls;
 
-    if (login.value === this.fixedUser && password.value === this.fixedUser) {
-      alert("342");
-    }
+    this.validUser =
+      login.value === this.fixedUser && password.value === this.fixedUser;
   }
 
   public onBtnClick(): void {
-    alert("ety");
+    this.menuAction.action.next(this.validUser);
   }
 
   public showTheHint(): void {
