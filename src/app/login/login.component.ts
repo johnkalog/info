@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { Router } from "@angular/router";
 import { MenuActionService } from "../menu-action.service";
 
 @Component({
@@ -18,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   readonly fixedUser = "admin";
 
-  constructor(private menuAction: MenuActionService, private router: Router) {}
+  constructor(private menuAction: MenuActionService) {}
 
   ngOnInit() {
     this.myFormGroup = new FormGroup({
